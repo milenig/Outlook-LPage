@@ -28,6 +28,50 @@ body{
     &--secondary{
         color: #0078d4;
     }
+    &--primary{
+        color: white;
+        background-color: #0078d4;
+        border: none;
+        padding: 8px 27px 11px;
+    }
+    &--header{
+        color: #666;
+        background-color: white;
+        border-color: rgba(0,0,0,0.15);
+        box-shadow: none;
+        padding: 8px 27px 11px;
+    }
+}
+
+header{
+    flex: 1;
+    backdrop-filter: blur(13px);
+    background-color: rgba(255, 255, 255, 0.2);
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    width: 100%;
+    
+    > div{
+        margin: auto;
+        max-width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        .logo{
+            transform: scale(0.9);
+        }
+        .button{
+            margin-left: 8px;
+        }
+        .logo img{
+            max-height: 45px;
+        }
+        .showOnScroll{
+            display: none;
+        }
+    }
 }
 
 .section__main{
@@ -39,26 +83,6 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-
-    header{
-        flex: 1;
-        backdrop-filter: blur(13px);
-        background-color: rgba(255, 255, 255, 0.2);
-        > div{
-            margin: auto;
-            max-width: 1000px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            .logo{
-                transform: scale(0.9);
-            }
-            .button{
-                margin-left: 10px;
-            }
-        }
-    }
 
     .head{
         flex: 13;
@@ -73,12 +97,16 @@ body{
         h1{
             font-size: 2em;
             font-weight: 500;
+            padding-top: 50px;
         }
         h2{
             font-size: 7.4em;
             font-weight: 500;
             line-height: 1.05em;
-            opacity: 0.2;
+        }
+        h2 span{
+            opacity: 0;
+            display: inline-block;
         }
     }
 
@@ -154,6 +182,7 @@ h3{
         z-index: 3;
         bottom: 0;
         padding: 50px 50px 0 0;
+        transform: translateY(80px);
     }
     .div-img{
         width: 77%;
@@ -774,12 +803,21 @@ footer{
 
 @keyframes headText {
     from{
-        transform: translateY(150px);
-        opacity: 0.2;
+        transform: translateY(120px);
+        opacity: 0;
     }
     to{
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes header {
+    from{
+        transform: translateY(-120px);
+    }
+    to{
+        transform: translateY(0);
     }
 }
 

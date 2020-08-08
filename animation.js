@@ -1,4 +1,4 @@
-const headText = document.querySelector('.anim1');
+const headText = document.querySelectorAll('.head_span');
 const coffeText = document.querySelector('.anim2');
 const corner = document.querySelector('.corner');
 const listItems = document.querySelectorAll('.list-item');
@@ -13,13 +13,13 @@ const outlookicn = document.querySelector('.outlook-icon');
 const reflectAppIcon = document.querySelectorAll('.reflect-app-icon');
 const expand = document.querySelector('.expand');
 
-let divs = [headText, coffeText, corner, blueText, organizedBg, accessibility, welcomeText, ornament, outlookicn, expand];
+let divs = [coffeText, corner, blueText, organizedBg, accessibility, welcomeText, ornament, outlookicn, expand];
 
 function animation(entires) {
   entires.forEach(entry => {
     if (entry.isIntersecting) {
-        if(entry.target.classList.contains('anim1')){
-            entry.target.style.animation = `headText 1s forwards ease-out`;
+        if(entry.target.classList.contains('head_span')){
+            entry.target.style.animation = `headText 1s ${entry.target.dataset.delay} forwards ease-out`;
         }
         if(entry.target.classList.contains('anim2')){
             entry.target.style.animation = `coffeText 1s forwards ease-out`;
@@ -70,6 +70,7 @@ function animation(entires) {
   })
 }
 const observer = new IntersectionObserver(animation);
+headText.forEach(el => observer.observe(el));
 divs.forEach(div => observer.observe(div));
 listItems.forEach(element => observer.observe(element));
 img1.forEach(element => observer.observe(element));

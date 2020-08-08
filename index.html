@@ -9,22 +9,26 @@
     <title>Outlook</title>
 </head>
 <body>
-    <section class="section__main">
-        <header>
-            <div class="bound">
-                <div class="logo"> <img src="/images/ms-wordmark-white.svg"/> </div>
-                <div>
-                    <button class="button button--outline">Try premium</button>
-                    <button class="button button--secondary">Sign in</button>
-                </div>
+    <header>
+        <div class="bound">
+            <div class="logo"> 
+                <a href="#" class="hideOnScroll"><img src="/images/ms-wordmark-white.svg"/></a>
+                <a href="#" class="showOnScroll"><img src="/images/outlook-icon.jpg"/></a>
             </div>
-        </header>
+            <div>
+                <button class="button button--outline">Try premium</button>
+                <button class="button button--secondary">Sign in</button>
+                <button class="button button--primary showOnScroll">Create free account</button>
+            </div>
+        </div>
+    </header>
+    <section class="section__main">
         <div class="head">
             <h1>Outlook</h1>
-            <h2 class="anim1">
-                Connect. <br>
-                Organize. <br>
-                Get things done.
+            <h2>
+                <span class="head_span" data-delay="0s">Connect.</span> <br>
+                <span class="head_span" data-delay="0.3s">Organize.</span> <br>
+                <span class="head_span" data-delay="0.6s">Get things done.</span>
             </h2>
         </div>
         <div class="free_box">
@@ -292,5 +296,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="script.js"></script>
     <script src="animation.js"></script>
+    <script>window.onscroll = function() {scrollFunction()};</script>
 </body>
 </html>

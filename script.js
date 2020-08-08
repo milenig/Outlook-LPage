@@ -1,3 +1,27 @@
+function scrollFunction() {
+  if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
+    document.querySelector(".hideOnScroll").style.display = "none";
+    document.querySelectorAll(".showOnScroll").forEach(function(val) {
+        val.style.display = 'inline';
+    });
+    document.querySelector("header").style.backgroundColor = "white";
+    document.querySelector("header").style.boxShadow = "0 2px 60px 14px rgba(0,0,0,0.13)";
+    document.querySelector("header").style.animation = "header 0.4s forwards linear";
+    document.querySelector(".button--outline").classList += " button--header";
+    document.querySelector(".button--secondary").classList += " button--header";
+  } else {
+    document.querySelector(".hideOnScroll").style.display = "inline";
+    document.querySelectorAll(".showOnScroll").forEach(function(val) {
+        val.style.display = 'none';
+    });
+    document.querySelector("header").style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+    document.querySelector("header").style.boxShadow = "0 2px 60px 14px rgba(0,0,0,0)";
+    document.querySelector("header").style.animation = "none";
+    document.querySelector(".button--outline").classList.remove("button--header");
+    document.querySelector(".button--secondary").classList.remove("button--header");
+  }
+}
+
 function openTab(e, tabName) {
     let tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
