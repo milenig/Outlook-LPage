@@ -42,10 +42,10 @@ function animation(entires) {
           entry.target.style.animation = `organizedBg 1s forwards ease-out`;
       }
         if(entry.target.classList.contains('img1')){
-          entry.target.style.animation = `leftImg 1.7s 0.8 forwards ease-in-out`;
+          entry.target.style.animation = `leftImg 1.7s 0.8 forwards ease-in`;
       }
         if(entry.target.classList.contains('img3')){
-          entry.target.style.animation = `rightImg 1.7s 0.8 forwards ease-in-out`;
+          entry.target.style.animation = `rightImg 1.7s 0.8 forwards ease-in`;
       }
         if(entry.target.classList.contains('ornament')){
           entry.target.style.animation = `ornament 1s forwards linear`;

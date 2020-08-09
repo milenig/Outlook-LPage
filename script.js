@@ -1,5 +1,6 @@
 function scrollFunction() {
   if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
+    document.querySelector("header").style.position = "fixed";
     document.querySelector(".hideOnScroll").style.display = "none";
     document.querySelectorAll(".showOnScroll").forEach(function(val) {
         val.style.display = 'inline';
@@ -10,6 +11,7 @@ function scrollFunction() {
     document.querySelector(".button--outline").classList += " button--header";
     document.querySelector(".button--secondary").classList += " button--header";
   } else {
+    document.querySelector("header").style.position = "absolute";
     document.querySelector(".hideOnScroll").style.display = "inline";
     document.querySelectorAll(".showOnScroll").forEach(function(val) {
         val.style.display = 'none';
@@ -55,3 +57,7 @@ $(document).ready(function(){
         smartSpeed: 1000
     });
   });
+
+  function hidepopup(){
+    document.querySelector('.noResponsive-popup').style.display = "none";
+  }
